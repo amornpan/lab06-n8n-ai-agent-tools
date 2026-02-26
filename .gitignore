@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env
+
+# n8n
+*.bak
+
+# Setup Guide (private)
+SETUP_GUIDE.md
+
+# Solution (private - instructor only)
+solution/
+
+# Admin (private - instructor only)
+Admin/
+
+# Quiz (private)
+quiz/
+
+# Slides & Lecture - only PDF allowed
+Slides/*
+!Slides/*.pdf
+Lecture/*
+!Lecture/*.pdf
