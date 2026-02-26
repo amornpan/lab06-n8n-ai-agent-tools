@@ -19,5 +19,42 @@ jobs:
       - name: Install dependencies
         run: pip install pytest
 
-      - name: Run tests
-        run: pytest tests/ -v --tb=short
+      - name: Test 01 - workflow file exists (8 pts)
+        run: pytest tests/test_workflow.py::TestWorkflowFile::test_01_workflow_file_exists -v
+        if: always()
+
+      - name: Test 02 - valid JSON (8 pts)
+        run: pytest tests/test_workflow.py::TestWorkflowFile::test_02_workflow_valid_json -v
+        if: always()
+
+      - name: Test 03 - Chat Trigger (10 pts)
+        run: pytest tests/test_workflow.py::TestChatTrigger::test_03_has_chat_trigger -v
+        if: always()
+
+      - name: Test 04 - AI Agent (12 pts)
+        run: pytest tests/test_workflow.py::TestAIAgent::test_04_has_ai_agent -v
+        if: always()
+
+      - name: Test 05 - LLM Model (12 pts)
+        run: pytest tests/test_workflow.py::TestSubNodes::test_05_has_llm_model -v
+        if: always()
+
+      - name: Test 06 - Calculator (10 pts)
+        run: pytest tests/test_workflow.py::TestSubNodes::test_06_has_calculator -v
+        if: always()
+
+      - name: Test 07 - Wikipedia (10 pts)
+        run: pytest tests/test_workflow.py::TestSubNodes::test_07_has_wikipedia -v
+        if: always()
+
+      - name: Test 08 - Memory (10 pts)
+        run: pytest tests/test_workflow.py::TestSubNodes::test_08_has_memory -v
+        if: always()
+
+      - name: Test 09 - System Message (10 pts)
+        run: pytest tests/test_workflow.py::TestAIAgent::test_09_agent_has_system_message -v
+        if: always()
+
+      - name: Test 10 - Tool connections (10 pts)
+        run: pytest tests/test_workflow.py::TestConnections::test_10_tools_connected_to_agent -v
+        if: always()
